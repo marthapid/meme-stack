@@ -5,10 +5,11 @@ export class Meme {
   description: string;
   source: string;
   votes: number;
+  isExpanded: boolean;
 }
 const MEMES: Meme[] = [
-  {title: 'test', description: 'descrition text', source: 'www.test.com', votes: 0},
-  {title: 'test2', description: 'descrition text2', source: 'www.test.com2', votes: 0}
+  {title: 'test', description: 'descrition text', source: 'www.test.com', votes: 0, isExpanded: false},
+  {title: 'test2', description: 'descrition text2', source: 'www.test.com2', votes: 0, isExpanded: false}
 ];
 
 @Component({
@@ -21,11 +22,14 @@ export class AppComponent {
   title = 'app works!';
   memes = MEMES;
 
-
   upvote(meme: Meme): void {
     meme.votes++;
   }
   downvote(meme: Meme): void {
     meme.votes--;
+  }
+
+  toggleExpanded(meme: Meme): void {
+    meme.isExpanded = !meme.isExpanded;
   }
 }

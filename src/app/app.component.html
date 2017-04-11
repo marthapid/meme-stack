@@ -24,5 +24,13 @@
 </h1>
 
 <ul>
-    <li *ngFor="let meme of memes"><span (click)="upvote(meme)">▲</span>{{meme.votes}}<span (click)="downvote(meme)">▼</span>: {{meme.title}}</li>
+    <li *ngFor="let meme of memes" (click)="toggleExpanded(meme)">
+      <span (click)="upvote(meme)">▲</span>
+      {{meme.votes}}
+      <span (click)="downvote(meme)">▼</span>
+      : {{meme.title}}
+      <div *ngIf="meme.isExpanded">
+        {{meme.description}}
+      </div>
+    </li>
 <ul>
