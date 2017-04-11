@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
 var db;
-var dbUrl = "mongodb://localhost/meme-stack"
+var dbUrl = "mongodb://localhost/meme-stack";
 if (process.env.MONGODB_URI) {
   dbUrl = process.env.MONGODB_URI;
 }
