@@ -8,7 +8,7 @@ export class Meme {
   isExpanded: boolean;
 }
 const MEMES: Meme[] = [
-  {title: 'test', description: 'descrition text', source: 'www.test.com', votes: 0, isExpanded: false},
+  {title: 'F1rst M3m3', description: 'descrition text', source: 'https://qph.ec.quoracdn.net/main-qimg-9af90ee3bf270ab4f98528e5bfccd5bb-c', votes: 0, isExpanded: false},
   {title: 'test2', description: 'descrition text2', source: 'www.test.com2', votes: 0, isExpanded: false}
 ];
 
@@ -22,10 +22,12 @@ export class AppComponent {
   title = 'app works!';
   memes = MEMES;
 
-  upvote(meme: Meme): void {
+  upvote(event: any, meme: Meme): void {
+    event.stopPropagation();
     meme.votes++;
   }
-  downvote(meme: Meme): void {
+  downvote(event: any, meme: Meme): void {
+    event.stopPropagation();
     meme.votes--;
   }
 
