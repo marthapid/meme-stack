@@ -4,10 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { MemeDetailsComponent } from './memes/meme-details/meme-details.component';
+import { MemeListComponent } from './memes/meme-list/meme-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MemeDetailsComponent,
+    MemeListComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,29 @@
+<div *ngIf="meme" class="row">
+  <div class="col-md-12">
+    <h2 *ngIf="meme._id">Meme Details</h2>
+    <h2 *ngIf="!meme._id">New Meme</h2>
+  </div>
+</div>
+<div *ngIf="meme" class="row">
+  <form class="col-md-12">
+    <div class="form-group">
+      <label for="meme-name">Name</label>
+      <input class="form-control" name="meme-name" [(ngModel)]="meme.name" placeholder="Name"/>
+    </div>
+    <div class="form-group">
+      <label for="meme-email">Email</label>
+      <input class="form-control" name="meme-email" [(ngModel)]="meme.email" placeholder="support@mlab.com"/>
+    </div>
+    <div class="form-group">
+      <label for="meme-phone-mobile">Mobile</label>
+      <input class="form-control" name="meme-phone-mobile" [(ngModel)]="meme.phone.mobile" placeholder="1234567890"/>
+    </div>
+    <div class="form-group">
+      <label for="meme-phone-work">Work</label>
+      <input class="form-control" name="meme-phone-work" [(ngModel)]="meme.phone.work" placeholder="0123456789"/>
+    </div>
+    <button class="btn btn-primary" *ngIf="!meme._id" (click)="createMeme(meme)">Create</button>
+    <button class="btn btn-info" *ngIf="meme._id" (click)="updateMeme(meme)">Update</button>
+    <button class="btn btn-danger" *ngIf="meme._id" (click)="deleteMeme(meme._id)">Delete</button>
+  </form>
+</div>
